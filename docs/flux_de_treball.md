@@ -10,3 +10,4 @@ Automatitza la generació de la documentació del projecte en format Markdown. C
 ### Resultat que produeix:
 El repositori manté sempre actualitzada la documentació sense intervenció manual. Cada vegada que es modifica el contingut, el README.md es regenera automàticament i es puja al repositori.
 
+
