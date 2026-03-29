@@ -1,0 +1,25 @@
+name: Generar documentació
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositori
+        uses: actions/checkout@v3
+
+      - name: Donar permisos al script
+        run: chmod +x scripts/generar_doc.sh
+
+      - name: Generar documentació
+        run: ./scripts/generar_doc.sh
+
+      - name: Pujar canvis
+        run: |
+          git add README.md
+          git commit -m "Actualitzar documentació automàtica" || echo "Sense canvis"
+          git push
