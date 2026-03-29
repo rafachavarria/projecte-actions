@@ -4,13 +4,16 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest
 
     steps:
       - name: Clonar repositori
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Donar permisos al script
         run: chmod +x scripts/generar_doc.sh
